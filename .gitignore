@@ -18,5 +18,8 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+# composite builds
+/packages/*/tsconfig.tsbuildinfo
+
 # distribution
 /packages/*/dist
