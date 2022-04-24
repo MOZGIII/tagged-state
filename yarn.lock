@@ -836,6 +836,15 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@tagged-state/root@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "@tagged-state/root@workspace:."
+  dependencies:
+    "@types/prettier": ^2.6.0
+    prettier: ^2.6.2
+  languageName: unknown
+  linkType: soft
+
 "@tagged-state/testutils@workspace:*, @tagged-state/testutils@workspace:packages/testutils":
   version: 0.0.0-use.local
   resolution: "@tagged-state/testutils@workspace:packages/testutils"
@@ -5051,15 +5060,6 @@ __metadata:
   checksum: 87f4164e396f0171b0a3386cc1877a817f572148ee13a7e113b238e48e8a9f2f31d009a92ec38a591ff1567d9662c6b67fd8818a2dbbaed74bc26a87a2a4a9a0
   languageName: node
   linkType: hard
-
-"root-workspace-0b6124@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "root-workspace-0b6124@workspace:."
-  dependencies:
-    "@types/prettier": ^2.6.0
-    prettier: ^2.6.2
-  languageName: unknown
-  linkType: soft
 
 "run-parallel@npm:^1.1.9":
   version: 1.2.0
