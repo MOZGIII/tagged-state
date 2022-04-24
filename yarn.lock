@@ -5,10 +5,19 @@ __metadata:
   version: 6
   cacheKey: 8
 
-"@tagged-state/core@workspace:packages/core":
+"@tagged-state/core@workspace:*, @tagged-state/core@workspace:packages/core":
   version: 0.0.0-use.local
   resolution: "@tagged-state/core@workspace:packages/core"
   dependencies:
+    typescript: ^4.6.3
+  languageName: unknown
+  linkType: soft
+
+"@tagged-state/ext@workspace:packages/ext":
+  version: 0.0.0-use.local
+  resolution: "@tagged-state/ext@workspace:packages/ext"
+  dependencies:
+    "@tagged-state/core": "workspace:*"
     typescript: ^4.6.3
   languageName: unknown
   linkType: soft

@@ -1,0 +1,19 @@
+{
+  "name": "@tagged-state/ext",
+  "version": "0.0.1",
+  "files": [
+    "dist/"
+  ],
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -b",
+    "prepack": "yarn build"
+  },
+  "dependencies": {
+    "@tagged-state/core": "workspace:*"
+  },
+  "devDependencies": {
+    "typescript": "^4.6.3"
+  }
+}
