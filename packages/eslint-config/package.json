@@ -1,0 +1,13 @@
+{
+  "name": "@tagged-state/eslint-config",
+  "version": "0.0.1",
+  "private": true,
+  "files": [],
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.20.0",
+    "@typescript-eslint/parser": "^5.20.0",
+    "eslint": "^8.14.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jest": "^26.1.5"
+  }
+}

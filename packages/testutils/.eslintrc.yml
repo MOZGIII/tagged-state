@@ -1,0 +1,4 @@
+extends:
+  - "@tagged-state"
+  - "@tagged-state/eslint-config/ignore-root-ts"
+  - "@tagged-state/eslint-config/ignore-dist"

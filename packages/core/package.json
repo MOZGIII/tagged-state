@@ -16,6 +16,7 @@
     "test": "jest"
   },
   "devDependencies": {
+    "@tagged-state/eslint-config": "workspace:*",
     "@tagged-state/testutils": "workspace:*",
     "@types/jest": "^27.4.1",
     "jest": "^27.5.1",
