@@ -1,0 +1,20 @@
+{
+  "search.exclude": {
+    "**/.yarn": true,
+    "**/.pnp.*": true
+  },
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "prettier.prettierPath": "yarn prettier",
+  "prettier.ignorePath": ".prettierignore",
+  "editor.formatOnSave": true,
+  "editor.formatOnSaveMode": "file",
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true
+  },
+  "package-json-upgrade.ignoreVersions": {
+    "@types/node": "*"
+  },
+  "[yaml][jsonc][javascript][javascriptreact][typescript][typescriptreact][html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}
