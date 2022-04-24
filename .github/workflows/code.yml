@@ -1,0 +1,58 @@
+name: code
+
+on:
+  push:
+  schedule:
+    - cron: "0 20 * * 0"
+
+defaults:
+  run:
+    shell: bash
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.ref != 'refs/heads/master' }}
+
+jobs:
+  workspace-global:
+    strategy:
+      matrix:
+        entry:
+          - name: prettier
+            command: prettier:check
+          - name: test
+            command: test
+          - name: build
+            command: build
+          - name: eslint
+            command: workspaces foreach run eslint:check --color
+      fail-fast: false
+
+    name: ${{ matrix.entry.name }}
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Set required node.js version
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - run: yarn install --immutable --immutable-cache
+
+      - run: yarn ${{ matrix.entry.command }}
+
+  check-cache:
+    name: Cache integrity check
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Set required node.js version
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - run: yarn install --immutable --immutable-cache --check-cache
