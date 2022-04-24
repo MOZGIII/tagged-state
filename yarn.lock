@@ -963,7 +963,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/prettier@npm:^2.1.5":
+"@types/prettier@npm:^2, @types/prettier@npm:^2.1.5":
   version: 2.6.0
   resolution: "@types/prettier@npm:2.6.0"
   checksum: 946f1f82ce6f31664e023a5d65931c31b7d677b454f528f67dce851d72e7fcfe713076f4251b16c3646eecf1545f5f5b909b4962966341ed9ddf5b80113b3674
@@ -3552,6 +3552,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"prettier@npm:^2.6.2":
+  version: 2.6.2
+  resolution: "prettier@npm:2.6.2"
+  bin:
+    prettier: bin-prettier.js
+  checksum: 48d08dde8e9fb1f5bccdd205baa7f192e9fc8bc98f86e1b97d919de804e28c806b0e6cc685e4a88211aa7987fa9668f30baae19580d87ced3ed0f2ec6572106f
+  languageName: node
+  linkType: hard
+
 "pretty-format@npm:^27.0.0, pretty-format@npm:^27.0.2, pretty-format@npm:^27.5.1":
   version: 27.5.1
   resolution: "pretty-format@npm:27.5.1"
@@ -3780,6 +3789,9 @@ __metadata:
 "root-workspace-0b6124@workspace:.":
   version: 0.0.0-use.local
   resolution: "root-workspace-0b6124@workspace:."
+  dependencies:
+    "@types/prettier": ^2
+    prettier: ^2.6.2
   languageName: unknown
   linkType: soft
 
