@@ -1,8 +1,9 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable jest/expect-expect */
 import React from "react";
 import { render } from "@testing-library/react";
 import { AssertEqual } from "@tagged-state/testutils";
-import { StateVariant } from "@tagged-state/core";
+import { EmptyObject, StateVariant } from "@tagged-state/core";
 import Guard, { StateComponentProps } from "./Guard";
 
 describe("StateComponentProps", () => {
@@ -17,8 +18,8 @@ describe("StateComponentProps", () => {
       | StateVariant<"error", ErrorProps>;
 
     type Expected = {
-      uninit: React.ComponentType<{}>;
-      loading: React.ComponentType<{}>;
+      uninit: React.ComponentType<EmptyObject>;
+      loading: React.ComponentType<EmptyObject>;
       ready: React.ComponentType<ReadyProps>;
       error: React.ComponentType<ErrorProps>;
     };

@@ -28,6 +28,7 @@ type Props<
 function ExpectContextState<
   ExpectedTag,
   State extends AnyTaggedState<Tag>,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   Tag extends string = any
 >(props: Props<ExpectedTag, State, Tag>) {
   const { context, tag } = props;

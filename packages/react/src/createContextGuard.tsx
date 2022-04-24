@@ -10,6 +10,7 @@ export type ContextGuardProps<
 function createContextGuard<
   Context extends React.Context<State>,
   State extends AnyTaggedState<Tag> = React.ContextType<Context>,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   Tag extends string = any
 >(context: Context): React.VFC<ContextGuardProps<State, Tag>> {
   function ContextGuard(

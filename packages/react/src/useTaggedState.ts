@@ -21,10 +21,12 @@ function useTaggedState<ExpectedTag, State extends AnyTaggedState>(
   expectedTag: ExpectedTag
 ): StateProps<State>[ExpectedTag & State["tag"]] {
   const taggedState = useContext(context);
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const { tag, data } = taggedState;
   if (tag !== expectedTag) {
     throw new UnexpectedStateError(expectedTag, tag);
   }
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
   return data;
 }
 

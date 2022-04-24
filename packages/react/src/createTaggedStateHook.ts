@@ -10,6 +10,7 @@ function createTaggedStateHook<ExpectedTag, State extends AnyTaggedState>(
   context: React.Context<State>,
   expectedTag: ExpectedTag
 ): TaggedStateHook<ExpectedTag, State> {
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
   return () => useTaggedState(context, expectedTag);
 }
 
