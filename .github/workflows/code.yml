@@ -25,7 +25,9 @@ jobs:
           - name: build
             command: build
           - name: eslint
-            command: workspaces foreach run eslint:check --color
+            command: >
+              workspaces foreach -v --exclude @tagged-state/root run
+              eslint:check --color --max-warnings 0
       fail-fast: false
 
     name: ${{ matrix.entry.name }}
