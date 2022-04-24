@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable jest/expect-expect */
 import { StateVariant } from "./taggedState";
 import mkts from "./mkts";
 
@@ -17,15 +18,19 @@ describe("mkts", () => {
   });
 
   it("fails typecheck when invalid", () => {
-    // @ts-expect-error
-    const assert1: State = mkts("uninit", { someVal: "qwe" }); // mismatched subtypes
-    // @ts-expect-error
-    const assert2: State = mkts("ready", {}); // mismatched subtypes
-    // @ts-expect-error
-    const assert3: State = mkts("ready", { qwe: true }); // invalid data
-    // @ts-expect-error
-    const assert4: State = mkts("ready", 123); // invalid data
-    // @ts-expect-error
-    const assert5: State = mkts("unknown", {}); // invalid tag
+    // @ts-expect-error: mismatched subtypes
+    const assert1: State = mkts("uninit", { someVal: "qwe" });
+
+    // @ts-expect-error:  mismatched subtypes
+    const assert2: State = mkts("ready", {});
+
+    // @ts-expect-error: invalid data
+    const assert3: State = mkts("ready", { qwe: true });
+
+    // @ts-expect-error: invalid data
+    const assert4: State = mkts("ready", 123);
+
+    // @ts-expect-error: invalid tag
+    const assert5: State = mkts("unknown", {});
   });
 });

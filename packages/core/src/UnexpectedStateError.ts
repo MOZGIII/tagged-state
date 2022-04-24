@@ -9,7 +9,8 @@ class UnexpectedStateError<
     public readonly actualTag: State["tag"]
   ) {
     super(
-      `The state is expected to be "${expectedTag}", but it was "${actualTag}".`
+      `The state is expected to be ${JSON.stringify(expectedTag)}, ` +
+        `but it was ${JSON.stringify(actualTag)}.`
     );
     this.name = "UnexpectedStateError";
     Object.setPrototypeOf(this, UnexpectedStateError.prototype);
