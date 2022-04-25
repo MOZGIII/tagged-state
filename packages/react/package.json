@@ -16,7 +16,7 @@
     "test": "jest"
   },
   "dependencies": {
-    "react": "^18.0.0"
+    "react": ">= 16.0.0"
   },
   "devDependencies": {
     "@tagged-state/eslint-config-react": "workspace:*",

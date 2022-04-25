@@ -13,7 +13,8 @@
     "source.fixAll": true
   },
   "package-json-upgrade.ignoreVersions": {
-    "@types/node": "*"
+    "@types/node": "*",
+    "react": "*"
   },
   "[yaml][jsonc][javascript][javascriptreact][typescript][typescriptreact][html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
