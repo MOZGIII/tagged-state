@@ -10,7 +10,7 @@ export type TaggedStateHooks<ExpectedTags, State extends AnyTaggedState> = {
   >;
 };
 
-export function createTaggedStateHooks<
+function createTaggedStateHooks<
   ExpectedTags extends string,
   State extends AnyTaggedState<Tag>,
   Tag extends string
