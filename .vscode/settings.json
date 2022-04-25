@@ -14,6 +14,7 @@
   },
   "package-json-upgrade.ignoreVersions": {
     "@types/node": "*",
+    "@types/react": "*",
     "react": "*"
   },
   "[yaml][jsonc][javascript][javascriptreact][typescript][typescriptreact][html]": {
