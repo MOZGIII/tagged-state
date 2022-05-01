@@ -43,24 +43,4 @@ describe("DelegatedFlatStateVariant", () => {
     const assert4: State = { tag: "unknown", data: {} };
   });
 
-  it("correctly derives StateProps", () => {
-    type FlatVariant =
-      | { tag: "ready"; someVal: string }
-      | { tag: "error"; error: Error };
-
-    type State =
-      | StateVariant<"uninit">
-      | StateVariant<"loading">
-      | DelegatedFlatStateVariant<"ready", FlatVariant>
-      | DelegatedFlatStateVariant<"error", FlatVariant>;
-
-    type ExpectedProps = {
-      uninit: Record<string, never>;
-      loading: Record<string, never>;
-      ready: { someVal: string };
-      error: { error: Error };
-    };
-
-    const assert1: AssertEqual<StateProps<State>, ExpectedProps> = true;
-  });
 });
