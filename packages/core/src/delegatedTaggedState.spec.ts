@@ -4,7 +4,7 @@ import { AssertEqual } from "@tagged-state/testutils";
 import { DelegatedFlatStateVariant } from "./delegatedTaggedState";
 import { StateProps, StateVariant } from "./taggedState";
 
-describe("delegated tagged state", () => {
+describe("DelegatedFlatStateVariant", () => {
   it("allows valid flat types", () => {
     type FlatVariant =
       | { tag: "ready"; someVal: string }
