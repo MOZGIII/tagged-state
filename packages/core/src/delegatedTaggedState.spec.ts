@@ -33,9 +33,9 @@ describe("DelegatedFlatStateVariant", () => {
       | DelegatedFlatStateVariant<"ready", FlatVariant>
       | DelegatedFlatStateVariant<"error", FlatVariant>;
 
-    // @ts-expect-error: invalid data
+    // @ts-expect-error: missing data & extra fields
     const assert1: State = { tag: "error", error: new Error() };
-    // @ts-expect-error: invalid data
+    // @ts-expect-error: missing data & extra fields
     const assert2: State = { tag: "error", someVal: true };
     // @ts-expect-error: unmatched data subtype
     const assert3: State = { tag: "error", data: { someVal: true } };
