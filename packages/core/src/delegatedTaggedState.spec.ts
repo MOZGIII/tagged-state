@@ -5,7 +5,7 @@ import { DelegatedFlatStateVariant } from "./delegatedTaggedState";
 import { StateProps, StateVariant } from "./taggedState";
 
 describe("DelegatedFlatStateVariant", () => {
-  it("allows valid flat types", () => {
+  it("allows valid values", () => {
     type FlatVariant =
       | { tag: "ready"; someVal: string }
       | { tag: "error"; error: Error };
