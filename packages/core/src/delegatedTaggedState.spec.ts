@@ -22,7 +22,7 @@ describe("DelegatedFlatStateVariant", () => {
     const assert4: State = { tag: "error", data: { error: new Error() } };
   });
 
-  it("disallows invalid flat types", () => {
+  it("disallows invalid values", () => {
     type FlatVariant =
       | { tag: "ready"; someVal: string }
       | { tag: "error"; error: Error };
