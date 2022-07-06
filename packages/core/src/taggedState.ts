@@ -6,6 +6,11 @@ export type StateVariant<
   Data extends { [key: string]: any } = EmptyObject
 > = { tag: Tag; data: Data };
 
+export type DelegatedFlatStateVariant<
+  Tag extends string,
+  To extends { [K in "tag" | string]: K extends "tag" ? Tag : To[K] }
+> = StateVariant<Tag, Omit<Extract<To, { tag: Tag }>, "tag">>;
+
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type AnyTaggedState<Tag extends string = any> = StateVariant<Tag, any>;
 
