@@ -1,26 +1,30 @@
 import React, { useContext } from "react";
-import { AnyTaggedState } from "@tagged-state/core";
-import Guard, { StateComponentProps } from "./Guard";
+import { AnyTaggedState, StateProps } from "@tagged-state/core";
+
+export type StateGuardProps<
+  State extends AnyTaggedState<Tag>,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  Tag extends string = any
+> = {
+  [Tag in keyof StateProps<State>]: React.ReactElement;
+};
 
 export type ContextGuardProps<
   State extends AnyTaggedState<Tag>,
   Tag extends string
-> = StateComponentProps<State, Tag>;
+> = StateGuardProps<State, Tag>;
 
 function createContextGuard<
   Context extends React.Context<State>,
   State extends AnyTaggedState<Tag> = React.ContextType<Context>,
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   Tag extends string = any
->(context: Context): React.VFC<ContextGuardProps<State, Tag>> {
+>(context: Context): React.FC<ContextGuardProps<State, Tag>> {
   function ContextGuard(
     props: ContextGuardProps<State, Tag>
-  ): React.ReactElement<
-    React.ComponentProps<StateComponentProps<State>[Tag]>,
-    StateComponentProps<State>[Tag]
-  > {
+  ): React.ReactElement {
     const taggedState = useContext(context);
-    return <Guard<State, Tag> {...props} taggedState={taggedState} />;
+    return props[taggedState.tag];
   }
   return ContextGuard;
 }

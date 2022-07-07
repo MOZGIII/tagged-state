@@ -1,7 +1,7 @@
 import React from "react";
 import { AnyTaggedState, StateProps } from "@tagged-state/core";
 
-export type StateComponentProps<
+export type StateComponentGuardProps<
   State extends AnyTaggedState<Tag>,
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   Tag extends string = any
@@ -11,14 +11,14 @@ export type StateComponentProps<
 
 type Props<State extends AnyTaggedState<Tag>, Tag extends string> = {
   taggedState: State;
-} & StateComponentProps<State, Tag>;
+} & StateComponentGuardProps<State, Tag>;
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 function Guard<State extends AnyTaggedState<Tag>, Tag extends string = any>(
   props: Props<State, Tag>
 ): React.ReactElement<
-  React.ComponentProps<StateComponentProps<State>[Tag]>,
-  StateComponentProps<State>[Tag]
+  React.ComponentProps<StateComponentGuardProps<State>[Tag]>,
+  StateComponentGuardProps<State>[Tag]
 > {
   const { taggedState } = props;
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
