@@ -4,32 +4,9 @@ import React from "react";
 import { render } from "@testing-library/react";
 import { AssertEqual } from "@tagged-state/testutils";
 import { EmptyObject, StateVariant } from "@tagged-state/core";
-import Guard, { StateComponentGuardProps } from "./Guard";
-import { StateGuardProps } from "./createContextGuard";
+import Guard, { StateComponentGuardProps } from "./ComponentGuard";
 
-describe("StateGuardProps", () => {
-  it("derives properly", () => {
-    type ReadyProps = { someVal: string };
-    type ErrorProps = { error: Error };
-
-    type State =
-      | StateVariant<"uninit">
-      | StateVariant<"loading">
-      | StateVariant<"ready", ReadyProps>
-      | StateVariant<"error", ErrorProps>;
-
-    type Expected = {
-      uninit: React.ReactElement;
-      loading: React.ReactElement;
-      ready: React.ReactElement;
-      error: React.ReactElement;
-    };
-
-    const assert1: AssertEqual<StateGuardProps<State>, Expected> = true;
-  });
-});
-
-describe("StateGuardComponentProps", () => {
+describe("StateComponentGuardProps", () => {
   it("derives properly", () => {
     type ReadyProps = { someVal: string };
     type ErrorProps = { error: Error };
@@ -54,7 +31,7 @@ describe("StateGuardComponentProps", () => {
   });
 });
 
-describe("Guard", () => {
+describe("ComponentGuard", () => {
   it("renders properly", () => {
     type ReadyProps = { someVal: string };
 

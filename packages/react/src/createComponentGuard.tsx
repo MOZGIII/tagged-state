@@ -1,13 +1,13 @@
 import React, { useContext } from "react";
 import { AnyTaggedState } from "@tagged-state/core";
-import Guard, { StateComponentGuardProps } from "./Guard";
+import Guard, { StateComponentGuardProps } from "./ComponentGuard";
 
 export type ContextComponentGuardProps<
   State extends AnyTaggedState<Tag>,
   Tag extends string
 > = StateComponentGuardProps<State, Tag>;
 
-function createContextComponentGuard<
+function createComponentGuard<
   Context extends React.Context<State>,
   State extends AnyTaggedState<Tag> = React.ContextType<Context>,
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -25,4 +25,4 @@ function createContextComponentGuard<
   return ContextGuard;
 }
 
-export default createContextComponentGuard;
+export default createComponentGuard;
