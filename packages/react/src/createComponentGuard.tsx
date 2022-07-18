@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
 import { AnyTaggedState } from "@tagged-state/core";
-import Guard, { StateComponentGuardProps } from "./ComponentGuard";
+import Guard, { StateComponentProps } from "./ComponentGuard";
 
 export type ContextComponentGuardProps<
   State extends AnyTaggedState<Tag>,
   Tag extends string
-> = StateComponentGuardProps<State, Tag>;
+> = StateComponentProps<State, Tag>;
 
 function createComponentGuard<
   Context extends React.Context<State>,
@@ -16,8 +16,8 @@ function createComponentGuard<
   function ContextGuard(
     props: ContextComponentGuardProps<State, Tag>
   ): React.ReactElement<
-    React.ComponentProps<StateComponentGuardProps<State>[Tag]>,
-    StateComponentGuardProps<State>[Tag]
+    React.ComponentProps<StateComponentProps<State>[Tag]>,
+    StateComponentProps<State>[Tag]
   > {
     const taggedState = useContext(context);
     return <Guard<State, Tag> {...props} taggedState={taggedState} />;
