@@ -12,14 +12,16 @@
   ],
   "scripts": {
     "build": "tsc -b",
-    "prepack": "yarn build",
+    "prepack": "rimraf dist && yarn build",
     "test": "jest"
   },
   "devDependencies": {
     "@tagged-state/eslint-config": "workspace:*",
     "@tagged-state/testutils": "workspace:*",
     "@types/jest": "^27.4.1",
+    "@types/rimraf": "^3",
     "jest": "^27.5.1",
+    "rimraf": "^3.0.2",
     "ts-jest": "^27.1.4",
     "ts-node": "^10.7.0",
     "typescript": "^4.6.3"

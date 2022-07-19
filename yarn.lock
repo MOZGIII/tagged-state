@@ -774,7 +774,9 @@ __metadata:
     "@tagged-state/eslint-config": "workspace:*"
     "@tagged-state/testutils": "workspace:*"
     "@types/jest": ^27.4.1
+    "@types/rimraf": ^3
     jest: ^27.5.1
+    rimraf: ^3.0.2
     ts-jest: ^27.1.4
     ts-node: ^10.7.0
     typescript: ^4.6.3
@@ -825,11 +827,13 @@ __metadata:
     "@types/react": ">= 16.0.0"
     "@types/react-dom": ^18.0.2
     "@types/react-test-renderer": ^18
+    "@types/rimraf": ^3
     "@types/testing-library__jest-dom": ^5.14.3
     jest: ^27.5.1
     react: ">= 16.0.0"
     react-dom: ^18.0.0
     react-test-renderer: ^18.0.0
+    rimraf: ^3.0.2
     ts-jest: ^27.1.4
     ts-node: ^10.7.0
     typescript: ^4.6.3
@@ -1012,6 +1016,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/glob@npm:*":
+  version: 7.2.0
+  resolution: "@types/glob@npm:7.2.0"
+  dependencies:
+    "@types/minimatch": "*"
+    "@types/node": "*"
+  checksum: 6ae717fedfdfdad25f3d5a568323926c64f52ef35897bcac8aca8e19bc50c0bd84630bbd063e5d52078b2137d8e7d3c26eabebd1a2f03ff350fff8a91e79fc19
+  languageName: node
+  linkType: hard
+
 "@types/graceful-fs@npm:^4.1.2":
   version: 4.1.5
   resolution: "@types/graceful-fs@npm:4.1.5"
@@ -1070,6 +1084,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/minimatch@npm:*":
+  version: 3.0.5
+  resolution: "@types/minimatch@npm:3.0.5"
+  checksum: c41d136f67231c3131cf1d4ca0b06687f4a322918a3a5adddc87ce90ed9dbd175a3610adee36b106ae68c0b92c637c35e02b58c8a56c424f71d30993ea220b92
+  languageName: node
+  linkType: hard
+
 "@types/node@npm:*":
   version: 17.0.25
   resolution: "@types/node@npm:17.0.25"
@@ -1117,6 +1138,16 @@ __metadata:
     "@types/scheduler": "*"
     csstype: ^3.0.2
   checksum: 368b40176f0dab30a611c3263bf1d9878cebede9ce8015bc5661a396787dbe41f0b667b8d6d448dea7bc8c0557bf3cb329ab2b16ad2dacb18eaa764358bd16d4
+  languageName: node
+  linkType: hard
+
+"@types/rimraf@npm:^3":
+  version: 3.0.2
+  resolution: "@types/rimraf@npm:3.0.2"
+  dependencies:
+    "@types/glob": "*"
+    "@types/node": "*"
+  checksum: b47fa302f46434cba704d20465861ad250df79467d3d289f9d6490d3aeeb41e8cb32dd80bd1a8fd833d1e185ac719fbf9be12e05ad9ce9be094d8ee8f1405347
   languageName: node
   linkType: hard
 
