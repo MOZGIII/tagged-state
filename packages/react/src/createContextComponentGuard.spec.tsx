@@ -2,11 +2,9 @@
 import React from "react";
 import { render } from "@testing-library/react";
 import { StateVariant } from "@tagged-state/core";
-import createElementGuard from "./createElementGuard";
+import createContextComponentGuard from "./createContextComponentGuard";
 
-describe("ElementGuard", () => {
-  const UninitComponent = () => <>uninit variant</>;
-  const ReadyComponent = () => <>ready variant</>;
+describe("ComponentGuard", () => {
   it("renders properly", () => {
     type ReadyProps = { someVal: string };
 
@@ -14,13 +12,16 @@ describe("ElementGuard", () => {
 
     const Test = React.createContext<State>({ tag: "uninit", data: {} });
 
-    const ElementGuard = createElementGuard(Test);
+    const uninit = () => <>uninit variant</>;
+    const ready = jest.fn();
+
+    const ContextComponentGuard = createContextComponentGuard(Test);
 
     const view = render(
-      <ElementGuard uninit={<UninitComponent />} ready={<ReadyComponent />} />
+      <ContextComponentGuard uninit={uninit} ready={ready} />
     );
 
     expect(view.baseElement).toHaveTextContent("uninit variant");
-    expect(view.baseElement).not.toHaveTextContent("ready variant");
+    expect(ready).not.toBeCalled();
   });
 });

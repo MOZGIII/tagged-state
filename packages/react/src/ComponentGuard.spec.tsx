@@ -4,7 +4,7 @@ import React from "react";
 import { render } from "@testing-library/react";
 import { AssertEqual } from "@tagged-state/testutils";
 import { EmptyObject, StateVariant } from "@tagged-state/core";
-import Guard, { StateComponentProps } from "./ComponentGuard";
+import ComponentGuard, { StateComponentProps } from "./ComponentGuard";
 
 describe("StateComponentProps", () => {
   it("derives properly", () => {
@@ -38,7 +38,7 @@ describe("ComponentGuard", () => {
     const ready = jest.fn();
 
     const view = render(
-      <Guard<State>
+      <ComponentGuard<State>
         taggedState={{ tag: "uninit", data: {} }}
         uninit={uninit}
         ready={ready}

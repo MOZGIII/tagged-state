@@ -4,9 +4,9 @@ import React from "react";
 import { render } from "@testing-library/react";
 import { AssertEqual } from "@tagged-state/testutils";
 import { StateVariant } from "@tagged-state/core";
-import ElementGuard, { StateElementGuardProps } from "./ElementGuard";
+import ElementGuard, { StateElementProps } from "./ElementGuard";
 
-describe("StateElementGuardProps", () => {
+describe("StateElementProps", () => {
   it("derives properly", () => {
     type ReadyProps = { someVal: string };
     type ErrorProps = { error: Error };
@@ -24,7 +24,7 @@ describe("StateElementGuardProps", () => {
       error: React.ReactElement;
     };
 
-    const assert1: AssertEqual<StateElementGuardProps<State>, Expected> = true;
+    const assert1: AssertEqual<StateElementProps<State>, Expected> = true;
   });
 });
 

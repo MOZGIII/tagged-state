@@ -1,10 +1,10 @@
 export { default as create } from "./create";
 
-export { default as createElementGuard } from "./createElementGuard";
-export * from "./createElementGuard";
+export { default as createContextElementGuard } from "./createContextElementGuard";
+export * from "./createContextElementGuard";
 
-export { default as createComponentGuard } from "./createComponentGuard";
-export * from "./createComponentGuard";
+export { default as createContextComponentGuard } from "./createContextComponentGuard";
+export * from "./createContextComponentGuard";
 
 export { default as createExpectContextState } from "./createExpectContextState";
 export * from "./createExpectContextState";
