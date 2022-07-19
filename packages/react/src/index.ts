@@ -1,4 +1,4 @@
-export { default as create } from "./create";
+export { default as createContext } from "./createContext";
 
 export { default as createContextElementGuard } from "./createContextElementGuard";
 export * from "./createContextElementGuard";
