@@ -3,10 +3,10 @@
 import React from "react";
 import { render } from "@testing-library/react";
 import { AssertEqual } from "@tagged-state/testutils";
-import { EmptyObject, StateVariant } from "@tagged-state/core";
-import Guard, { StateComponentProps } from "./Guard";
+import { StateVariant } from "@tagged-state/core";
+import ElementGuard, { StateElementProps } from "./ElementGuard";
 
-describe("StateComponentProps", () => {
+describe("StateElementProps", () => {
   it("derives properly", () => {
     type ReadyProps = { someVal: string };
     type ErrorProps = { error: Error };
@@ -18,27 +18,26 @@ describe("StateComponentProps", () => {
       | StateVariant<"error", ErrorProps>;
 
     type Expected = {
-      uninit: React.ComponentType<EmptyObject>;
-      loading: React.ComponentType<EmptyObject>;
-      ready: React.ComponentType<ReadyProps>;
-      error: React.ComponentType<ErrorProps>;
+      uninit: React.ReactElement;
+      loading: React.ReactElement;
+      ready: React.ReactElement;
+      error: React.ReactElement;
     };
 
-    const assert1: AssertEqual<StateComponentProps<State>, Expected> = true;
+    const assert1: AssertEqual<StateElementProps<State>, Expected> = true;
   });
 });
 
-describe("Guard", () => {
+describe("ElementGuard", () => {
   it("renders properly", () => {
     type ReadyProps = { someVal: string };
-
     type State = StateVariant<"uninit"> | StateVariant<"ready", ReadyProps>;
 
-    const uninit = () => <>uninit variant</>;
-    const ready = jest.fn();
+    const uninit = <>uninit variant</>;
+    const ready = <>ready variant</>;
 
     const view = render(
-      <Guard<State>
+      <ElementGuard<State>
         taggedState={{ tag: "uninit", data: {} }}
         uninit={uninit}
         ready={ready}
@@ -46,6 +45,6 @@ describe("Guard", () => {
     );
 
     expect(view.baseElement).toHaveTextContent("uninit variant");
-    expect(ready).not.toBeCalled();
+    expect(view.baseElement).not.toHaveTextContent("ready variant");
   });
 });
