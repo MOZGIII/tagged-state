@@ -2,8 +2,6 @@ name: code
 
 on:
   push:
-  schedule:
-    - cron: "0 20 * * 0"
 
 defaults:
   run:
