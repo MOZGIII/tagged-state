@@ -11,8 +11,9 @@
     "dist/"
   ],
   "scripts": {
-    "build": "rimraf dist && tsc -b",
-    "prepack": "rimraf dist && yarn build",
+    "build": "tsc -b",
+    "clean": "rimraf dist && rimraf tsconfig.tsbuildinfo",
+    "prepack": "yarn clean && yarn build",
     "test": "jest"
   },
   "dependencies": {
