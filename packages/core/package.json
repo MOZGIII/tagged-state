@@ -11,7 +11,7 @@
     "dist/"
   ],
   "scripts": {
-    "build": "tsc -b",
+    "build": "rimraf dist && tsc -b",
     "prepack": "rimraf dist && yarn build",
     "test": "jest"
   },
