@@ -2,17 +2,17 @@
   "name": "@tagged-state/react",
   "version": "0.0.5",
   "publishConfig": {
-    "main": "./dist/index.js",
-    "types": "./dist/index.d.ts"
+    "main": "./lib/index.js",
+    "types": "./lib/index.d.ts"
   },
   "main": "./src/index.ts",
   "types": "./src/index.ts",
   "files": [
-    "dist/"
+    "lib/"
   ],
   "scripts": {
     "build": "tsc -b",
-    "clean": "rimraf dist && rimraf tsconfig.tsbuildinfo",
+    "clean": "rimraf lib && rimraf tsconfig.tsbuildinfo",
     "prepack": "yarn clean && yarn build",
     "test": "jest"
   },

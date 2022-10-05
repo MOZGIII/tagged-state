@@ -23,4 +23,5 @@ yarn-error.log*
 
 # distribution
 /packages/*/dist
+/packages/*/lib
 package.tgz
