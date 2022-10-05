@@ -2,11 +2,11 @@
   "name": "@tagged-state/core",
   "version": "0.0.1",
   "publishConfig": {
-    "main": "./lib/index.js",
-    "types": "./lib/index.d.ts"
+    "main": "lib/index.js",
+    "types": "lib/index.d.ts"
   },
-  "main": "./src/index.ts",
-  "types": "./src/index.ts",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
   "files": [
     "lib/"
   ],
