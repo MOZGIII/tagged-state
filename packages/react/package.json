@@ -16,7 +16,7 @@
     "prepack": "yarn clean && yarn build",
     "test": "jest"
   },
-  "dependencies": {
+  "peerDependencies": {
     "@types/react": ">= 16.0.0",
     "react": ">= 16.0.0"
   },
