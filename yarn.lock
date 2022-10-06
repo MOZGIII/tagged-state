@@ -824,20 +824,19 @@ __metadata:
     "@testing-library/react": ^13.1.1
     "@testing-library/react-hooks": ^8.0.0
     "@types/jest": ^27.4.1
+    "@types/react": 18.0.21
     "@types/react-dom": ^18.0.2
     "@types/react-test-renderer": ^18
     "@types/rimraf": ^3
     "@types/testing-library__jest-dom": ^5.14.3
     jest: ^27.5.1
+    react: 18.2.0
     react-dom: ^18.0.0
     react-test-renderer: ^18.0.0
     rimraf: ^3.0.2
     ts-jest: ^27.1.4
     ts-node: ^10.7.0
     typescript: ^4.6.3
-  peerDependencies:
-    "@types/react": ">= 16.0.0"
-    react: ">= 16.0.0"
   languageName: unknown
   linkType: soft
 
@@ -1139,6 +1138,17 @@ __metadata:
     "@types/scheduler": "*"
     csstype: ^3.0.2
   checksum: 368b40176f0dab30a611c3263bf1d9878cebede9ce8015bc5661a396787dbe41f0b667b8d6d448dea7bc8c0557bf3cb329ab2b16ad2dacb18eaa764358bd16d4
+  languageName: node
+  linkType: hard
+
+"@types/react@npm:18.0.21":
+  version: 18.0.21
+  resolution: "@types/react@npm:18.0.21"
+  dependencies:
+    "@types/prop-types": "*"
+    "@types/scheduler": "*"
+    csstype: ^3.0.2
+  checksum: 36c1a7c9d507e81e2e629c1ad3db51d7b84d8b010c2d5008da411874286c6a5ccc711ae1d4c470efc0bdc77153cc8804a40e927e929e5164c669ca41b84b846d
   languageName: node
   linkType: hard
 
@@ -4927,6 +4937,15 @@ __metadata:
   peerDependencies:
     react: ^18.0.0
   checksum: c0e5250fa2e4c3650e247b986c262631bec68f18c06817269ab7a4e2cffa5a152bb58ce0fe4182ffa8c333e6c2a8d763ac92e0928e5f6914a7aa188c2de1943a
+  languageName: node
+  linkType: hard
+
+"react@npm:18.2.0":
+  version: 18.2.0
+  resolution: "react@npm:18.2.0"
+  dependencies:
+    loose-envify: ^1.1.0
+  checksum: 88e38092da8839b830cda6feef2e8505dec8ace60579e46aa5490fc3dc9bba0bd50336507dc166f43e3afc1c42939c09fe33b25fae889d6f402721dcd78fca1b
   languageName: node
   linkType: hard
 
