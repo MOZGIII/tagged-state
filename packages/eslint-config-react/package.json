@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "private": true,
   "files": [],
+  "peerDependencies": {
+    "eslint": "*"
+  },
   "dependencies": {
     "@tagged-state/eslint-config": "workspace:*",
     "eslint-plugin-react": "^7.33.1",
