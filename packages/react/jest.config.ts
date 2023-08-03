@@ -1,8 +1,14 @@
-import type { InitialOptionsTsJest } from "ts-jest/dist/types";
+import type { JestConfigWithTsJest } from "ts-jest";
 
 export default {
-  preset: "ts-jest",
   testEnvironment: "jsdom",
-  globals: { "ts-jest": { tsconfig: "./tsconfig.test.json" } },
+  transform: {
+    "^.+\\.tsx?$": [
+      "ts-jest",
+      {
+        tsconfig: "./tsconfig.test.json",
+      },
+    ],
+  },
   setupFilesAfterEnv: ["<rootDir>/jest.setup.ts"],
-} as InitialOptionsTsJest;
+} satisfies JestConfigWithTsJest;
