@@ -41,7 +41,7 @@ describe("ElementGuard", () => {
         taggedState={{ tag: "uninit", data: {} }}
         uninit={uninit}
         ready={ready}
-      />
+      />,
     );
 
     expect(view.baseElement).toHaveTextContent("uninit variant");
