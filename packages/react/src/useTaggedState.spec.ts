@@ -41,18 +41,12 @@ describe("useTaggedState", () => {
 
     const data = { b: true };
 
-    const view = renderHook(() => {
-      const Test = React.createContext<State>({ tag: "b", data });
-      return useTaggedState(Test, "a" as const);
-    });
-
-    type ActualWouldBeType = typeof view.result.current;
-    type ExpectedType = StateProps<State>["a"];
-
-    const assert1: AssertEqual<ActualWouldBeType, ExpectedType> = true;
 
     expect(() => {
-      return view.result.current;
+       renderHook(() => {
+        const Test = React.createContext<State>({ tag: "b", data });
+        return useTaggedState(Test, "a" as const);
+      });
     }).toThrowError(new UnexpectedStateError("a", "b"));
   });
 });
