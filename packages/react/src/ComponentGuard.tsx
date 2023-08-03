@@ -13,8 +13,11 @@ type Props<State extends AnyTaggedState<Tag>, Tag extends string> = {
   taggedState: State;
 } & StateComponentProps<State, Tag>;
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-function Guard<State extends AnyTaggedState<Tag>, Tag extends string = any>(
+function ComponentGuard<
+  State extends AnyTaggedState<Tag>,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  Tag extends string = any
+>(
   props: Props<State, Tag>
 ): React.ReactElement<
   React.ComponentProps<StateComponentProps<State>[Tag]>,
@@ -27,4 +30,4 @@ function Guard<State extends AnyTaggedState<Tag>, Tag extends string = any>(
   return <Component {...data} />;
 }
 
-export default Guard;
+export default ComponentGuard;
