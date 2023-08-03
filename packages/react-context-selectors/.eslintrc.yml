@@ -1,0 +1,5 @@
+extends:
+  - "@tagged-state/eslint-config-react"
+  - "@tagged-state/eslint-config-react/jest"
+  - "@tagged-state/eslint-config/ignore-root-ts"
+  - "@tagged-state/eslint-config/ignore-lib"
