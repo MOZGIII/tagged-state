@@ -10,7 +10,7 @@
     "prettier:fix": "prettier --write ."
   },
   "devDependencies": {
-    "@types/prettier": "^2.6.0",
-    "prettier": "^2.6.2"
+    "@types/prettier": "^3.0.0",
+    "prettier": "^3.0.3"
   }
 }
