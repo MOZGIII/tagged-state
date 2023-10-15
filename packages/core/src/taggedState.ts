@@ -3,12 +3,12 @@ export type EmptyObject = Record<string, never>;
 export type StateVariant<
   Tag extends string,
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  Data extends { [key: string]: any } = EmptyObject
+  Data extends { [key: string]: any } = EmptyObject,
 > = { tag: Tag; data: Data };
 
 export type DelegatedFlatStateVariant<
   Tag extends string,
-  To extends { [K in "tag" | string]: K extends "tag" ? Tag : To[K] }
+  To extends { [K in "tag" | string]: K extends "tag" ? Tag : To[K] },
 > = StateVariant<Tag, Omit<Extract<To, { tag: Tag }>, "tag">>;
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any

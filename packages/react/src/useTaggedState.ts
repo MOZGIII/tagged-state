@@ -18,7 +18,7 @@ import {
 //
 function useTaggedState<ExpectedTag, State extends AnyTaggedState>(
   context: React.Context<State>,
-  expectedTag: ExpectedTag
+  expectedTag: ExpectedTag,
 ): StateProps<State>[ExpectedTag & State["tag"]] {
   const taggedState = useContext(context);
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
