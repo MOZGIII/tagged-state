@@ -39,7 +39,7 @@ describe("ExpectContextState", () => {
       <>hello {props.someVal}</>
     )) as React.VFC<ReadyProps>);
 
-    jest.spyOn(global.console, "error").mockImplementation();
+    jest.spyOn(console, "error").mockImplementation();
 
     expect(() => {
       render(
