@@ -13,7 +13,7 @@
     "source.fixAll": true
   },
   "package-json-upgrade.ignoreVersions": {
-    "@types/node": "*",
+    "@types/node": "> 16",
     "@types/react": "*",
     "react": "*"
   },
