@@ -22,6 +22,6 @@ describe("ComponentGuard", () => {
     );
 
     expect(view.baseElement).toHaveTextContent("uninit variant");
-    expect(ready).not.toBeCalled();
+    expect(ready).not.toHaveBeenCalled();
   });
 });

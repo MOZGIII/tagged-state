@@ -53,6 +53,6 @@ describe("useTaggedState", () => {
 
     expect(() => {
       return view.result.current;
-    }).toThrowError(new UnexpectedStateError("a", "b"));
+    }).toThrow(new UnexpectedStateError("a", "b"));
   });
 });
