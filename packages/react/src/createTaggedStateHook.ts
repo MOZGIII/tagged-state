@@ -3,12 +3,12 @@ import useTaggedState from "./useTaggedState";
 
 export type TaggedStateHook<
   ExpectedTag,
-  State extends AnyTaggedState
+  State extends AnyTaggedState,
 > = () => StateProps<State>[ExpectedTag & State["tag"]];
 
 function createTaggedStateHook<ExpectedTag, State extends AnyTaggedState>(
   context: React.Context<State>,
-  expectedTag: ExpectedTag
+  expectedTag: ExpectedTag,
 ): TaggedStateHook<ExpectedTag, State> {
   // eslint-disable-next-line @typescript-eslint/no-unsafe-return
   return () => useTaggedState(context, expectedTag);

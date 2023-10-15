@@ -21,7 +21,7 @@ describe("ExpectContextState", () => {
     const view = render(
       <ExpectContextState context={Test} tag={"ready" as const}>
         {ready}
-      </ExpectContextState>
+      </ExpectContextState>,
     );
 
     expect(view.baseElement).toHaveTextContent("hello world");
@@ -45,7 +45,7 @@ describe("ExpectContextState", () => {
       render(
         <ExpectContextState context={Test} tag={"ready" as const}>
           {ready}
-        </ExpectContextState>
+        </ExpectContextState>,
       );
     }).toThrowError(new UnexpectedStateError("ready", "uninit"));
   });

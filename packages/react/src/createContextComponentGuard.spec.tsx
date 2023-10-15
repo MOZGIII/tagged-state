@@ -18,7 +18,7 @@ describe("ComponentGuard", () => {
     const ContextComponentGuard = createContextComponentGuard(Test);
 
     const view = render(
-      <ContextComponentGuard uninit={uninit} ready={ready} />
+      <ContextComponentGuard uninit={uninit} ready={ready} />,
     );
 
     expect(view.baseElement).toHaveTextContent("uninit variant");

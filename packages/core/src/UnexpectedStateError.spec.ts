@@ -3,7 +3,7 @@ import UnexpectedStateError from "./UnexpectedStateError";
 describe("UnexpectedStateError", () => {
   it("has correct prototype", () => {
     expect(new UnexpectedStateError("a", "b")).toBeInstanceOf(
-      UnexpectedStateError
+      UnexpectedStateError,
     );
   });
 
