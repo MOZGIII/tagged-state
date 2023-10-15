@@ -8,7 +8,7 @@ export type StateVariant<
 
 export type DelegatedFlatStateVariant<
   Tag extends string,
-  To extends { [K in "tag" | string]: K extends "tag" ? Tag : To[K] },
+  To extends { [K in string]: K extends "tag" ? Tag : To[K] },
 > = StateVariant<Tag, Omit<Extract<To, { tag: Tag }>, "tag">>;
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any

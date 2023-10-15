@@ -25,7 +25,7 @@ describe("ExpectContextState", () => {
     );
 
     expect(view.baseElement).toHaveTextContent("hello world");
-    expect(ready).toBeCalledTimes(1);
+    expect(ready).toHaveBeenCalledTimes(1);
   });
 
   it("throws when state doesn't match", () => {
@@ -39,7 +39,7 @@ describe("ExpectContextState", () => {
       <>hello {props.someVal}</>
     )) as React.VFC<ReadyProps>);
 
-    jest.spyOn(global.console, "error").mockImplementation();
+    jest.spyOn(console, "error").mockImplementation();
 
     expect(() => {
       render(
@@ -47,6 +47,6 @@ describe("ExpectContextState", () => {
           {ready}
         </ExpectContextState>,
       );
-    }).toThrowError(new UnexpectedStateError("ready", "uninit"));
+    }).toThrow(new UnexpectedStateError("ready", "uninit"));
   });
 });

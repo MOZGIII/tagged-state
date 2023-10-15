@@ -3,3 +3,4 @@ extends:
   - "@tagged-state/eslint-config/jest"
   - "@tagged-state/eslint-config/ignore-root-ts"
   - "@tagged-state/eslint-config/ignore-lib"
+  - "@tagged-state/eslint-config/allow-any"

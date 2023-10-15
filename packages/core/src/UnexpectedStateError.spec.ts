@@ -10,7 +10,7 @@ describe("UnexpectedStateError", () => {
   it("works when we throw it and match with jest", () => {
     expect(() => {
       throw new UnexpectedStateError("a", "b");
-    }).toThrowError(UnexpectedStateError);
+    }).toThrow(UnexpectedStateError);
   });
 
   it("assigns properties", () => {
