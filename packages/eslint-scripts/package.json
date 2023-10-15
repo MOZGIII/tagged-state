@@ -8,6 +8,6 @@
     "eslint:fix": "cd \"$INIT_CWD\" && eslint --ext \".js,.jsx,.ts,.tsx\" --fix . --no-error-on-unmatched-pattern"
   },
   "dependencies": {
-    "eslint": "^8.14.0"
+    "eslint": "^8.51.0"
   }
 }
