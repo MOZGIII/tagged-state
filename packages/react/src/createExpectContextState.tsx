@@ -3,7 +3,7 @@ import ExpectContextState from "./ExpectContextState";
 
 export type BoundExpectContextStateProps<
   ExpectedTag,
-  State extends AnyTaggedState
+  State extends AnyTaggedState,
 > = {
   children: React.ComponentType<StateProps<State>[ExpectedTag & State["tag"]]>;
 };
@@ -11,10 +11,10 @@ export type BoundExpectContextStateProps<
 function createExpectContextState<
   ExpectedTag,
   Context extends React.Context<State>,
-  State extends AnyTaggedState = React.ContextType<Context>
+  State extends AnyTaggedState = React.ContextType<Context>,
 >(
   context: Context,
-  tag: ExpectedTag
+  tag: ExpectedTag,
 ): React.VFC<BoundExpectContextStateProps<ExpectedTag, State>> {
   const BoundExpectContextState: React.VFC<
     BoundExpectContextStateProps<ExpectedTag, State>

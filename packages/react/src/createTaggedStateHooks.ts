@@ -13,19 +13,22 @@ export type TaggedStateHooks<ExpectedTags, State extends AnyTaggedState> = {
 function createTaggedStateHooks<
   ExpectedTags extends string,
   State extends AnyTaggedState<Tag>,
-  Tag extends string
+  Tag extends string,
 >(
   context: React.Context<State>,
-  expectTags: readonly ExpectedTags[]
+  expectTags: readonly ExpectedTags[],
 ): TaggedStateHooks<ExpectedTags, State> {
-  return expectTags.reduce((acc, tag) => {
-    const hookName =
-      tag.length === 0 ? tag : tag[0].toUpperCase() + tag.slice(1);
-    return {
-      ...acc,
-      [`use${hookName}`]: createTaggedStateHook(context, tag),
-    };
-  }, {} as TaggedStateHooks<ExpectedTags, State>);
+  return expectTags.reduce(
+    (acc, tag) => {
+      const hookName =
+        tag.length === 0 ? tag : tag[0].toUpperCase() + tag.slice(1);
+      return {
+        ...acc,
+        [`use${hookName}`]: createTaggedStateHook(context, tag),
+      };
+    },
+    {} as TaggedStateHooks<ExpectedTags, State>,
+  );
 }
 
 export default createTaggedStateHooks;

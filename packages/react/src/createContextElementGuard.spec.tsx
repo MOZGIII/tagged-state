@@ -20,7 +20,7 @@ describe("ElementGuard", () => {
       <ContextElementGuard
         uninit={<UninitComponent />}
         ready={<ReadyComponent />}
-      />
+      />,
     );
 
     expect(view.baseElement).toHaveTextContent("uninit variant");

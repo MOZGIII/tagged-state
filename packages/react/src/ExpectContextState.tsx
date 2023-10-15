@@ -5,7 +5,7 @@ import useTaggedState from "./useTaggedState";
 type Props<
   ExpectedTag,
   State extends AnyTaggedState<Tag>,
-  Tag extends string
+  Tag extends string,
 > = {
   context: React.Context<State>;
   tag: ExpectedTag;
@@ -29,7 +29,7 @@ function ExpectContextState<
   ExpectedTag,
   State extends AnyTaggedState<Tag>,
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  Tag extends string = any
+  Tag extends string = any,
 >(props: Props<ExpectedTag, State, Tag>) {
   const { context, tag } = props;
   const taggedState = useTaggedState<ExpectedTag, State>(context, tag);
