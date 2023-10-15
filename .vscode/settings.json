@@ -17,5 +17,6 @@
   },
   "[yaml][jsonc][javascript][javascriptreact][typescript][typescriptreact][html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "eslint.workingDirectories": [{ "pattern": "./packages/*/" }]
 }
