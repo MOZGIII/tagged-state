@@ -16,6 +16,6 @@
     "prepack": "yarn build"
   },
   "devDependencies": {
-    "typescript": "^5.2.2"
+    "typescript": "^5.5.2"
   }
 }
