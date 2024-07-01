@@ -19,13 +19,13 @@
   "devDependencies": {
     "@tagged-state/eslint-config": "workspace:*",
     "@tagged-state/testutils": "workspace:*",
-    "@types/jest": "^29.5.5",
+    "@types/jest": "^29.5.12",
     "@types/rimraf": "^4.0.5",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
-    "rimraf": "^5.0.5",
-    "ts-jest": "^29.1.1",
-    "ts-node": "^10.9.1",
-    "typescript": "^5.2.2"
+    "rimraf": "^5.0.7",
+    "ts-jest": "^29.1.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.3"
   }
 }
